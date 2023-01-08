@@ -1,15 +1,23 @@
-class Validacoes {
+class ValidacoesJS {
 
 
-    constructor() {
-        this.validacoes = [];
-    }
+    // constructor() {
+    //     this.validacoes = [];
+    // } 
 
     validateForm = () =>{
-        let nome = document.forms["formCadastro"]["nome"].value;
-        if (nome == "") {
-          console.log('nome vazio');
-          return false;
+        let pnome = document.getElementById('Pnome');
+        let nome = document.forms["formCadastro"]["cadastroNome"].value;
+        if (nome == "" && nome.length < 2) {
+            
+           
+            let pname = pnome.innerText = "teste";
+            console.log(pname)
+            
+
+         
+          
+          
         }
     }
 

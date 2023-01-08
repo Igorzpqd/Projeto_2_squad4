@@ -5,21 +5,20 @@
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
+
   <meta name="author" content="Holger Koenemann">
   <meta name="generator" content="Eleventy v2.0.0">
   <meta name="HandheldFriendly" content="true">
-  <title>Register a new account</title>
+  <title>Cadastro</title>
   <link rel="stylesheet" href="css/theme.min.css">
-
+  <script src="js/ValidacoesJS.js"></script>
+  
+  
 
   </head>
 
   <body class="d-flex h-100 w-100 bg-black text-white" data-bs-spy="scroll" data-bs-target="#navScroll">
-
+    
     <div class="h-100 container-fluid">
       <div class="h-100 row d-flex align-items-stretch">
         
@@ -42,13 +41,13 @@
   <div class="col-12">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Nome</label>
-      <input type="email" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" >
-      <div id="nome"></div>
+      <input type="email" class="form-control form-control-lg bg-gray-800 border-dark" name="cadastroNome" id="cadastroNome"  >
+      <p id="Pnome"></p>
     </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">E-mail</label>
     <input type="email" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroEmail" >
-    <div id="Email"></div>
+    <p id="Pemail"></p>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Senha</label>
@@ -90,7 +89,7 @@
     <div id="Complemento"></div>
   </div>
  
-  <button type="submit" class="btn btn-white btn-xl mb-4">Cadastrar</button>
+  <button type="submit" class="btn btn-white btn-xl mb-4" onclick="validar.validateForm()">Cadastrar</button>
   <div>
     <p>Já tem cadastro?  <a href="login.html"  style="color:pink;text-decoration: none;">Faça Login</a></p>
   </div>
@@ -105,5 +104,11 @@
         </div>
 
       </div>
-    <script src="js/ValidacoesJS.js"></script></body>
+      
+    </body>
+    <script>
+      const validar = new ValidacoesJS();
+  
+    </script>
+    
     </html>

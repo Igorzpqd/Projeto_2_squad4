@@ -83,12 +83,12 @@ class ValidacoesJS {
            console.log('senha:',senha)
            console.log('senha2:',senha2)
            //nome
-            if (nome == "") {
+            if (nome === "") {
              pnome.innerText = " * Campo NOME Vazio, preencha correctamente";
              pnome.style.color  = "red";
             
             } 
-            if(nome.length < 3){
+            if(nome.length  > 1 && nome.length < 3){
              pnome.innerText = " * Nome precisa ser maior que 2 caracteres";
              pnome.style.color  = "red";
             }
@@ -109,7 +109,7 @@ class ValidacoesJS {
                 psenha.style.color  = "red";
                
                } 
-               if(senha.length > 1 && senha.length < 6){
+               if(senha.length <1 || senha.length < 6){
                 psenha.innerText = " * Senha precisa ser maior ou igual a 6 caracteres";
                 psenha.style.color  = "red";
                }
@@ -156,7 +156,7 @@ class ValidacoesJS {
                
                }
                if (rua == "") {
-                pRua.innerText = " * Campo RG RUA, preencha correctamente";
+                pRua.innerText = " * Campo RUA, preencha correctamente";
                 pRua.style.color  = "red";
                
                }
@@ -166,16 +166,28 @@ class ValidacoesJS {
                
                }
 
-            
-
+               Swal.fire({
+                type: 'success',
+                title: 'Excelente',
+                text: 'Cadastro realizado com sucesso',
+                showConfirmButton: false,
+                timer: 2000
+              })
+            //swal("Excelente!", "Cadastro realizado com sucesso", "success");
+            let url = "index.html";
+            setTimeout(function(){
+                location = url;
+            },2000)
             event.preventDefault()
           });
+          
        
 
 
 
        
     }
+    
     envioEmail = () =>{
       
       document.getElementById("enviar").addEventListener("click", function(event){
@@ -203,6 +215,7 @@ class ValidacoesJS {
               window.location.href = "mensagemEmail.html";
             });
           }
+          
             event.preventDefault()
           });
 
@@ -240,9 +253,21 @@ class ValidacoesJS {
           psenha.innerHTML =""
         }
         if(email == emailTeste &&senha == senhaTeste){
-          window.location.href = "mensagemEmail.html";
+          Swal.fire({
+            type: 'success',
+            title: 'logando..',
+            text: 'Redirecionando...',
+            showConfirmButton: false,
+            timer: 3000
+          })
+        //swal("Excelente!", "Cadastro realizado com sucesso", "success");
+        let url = "index.html";
+        setTimeout(function(){
+            location = url;
+        },3000)
 
         }
+       
         event.preventDefault()
       });
     }

@@ -77,107 +77,138 @@ class ValidacoesJS {
             let pRua = document.getElementById('Numero');
             let complemento = document.getElementById('cadastroComplemento').value;
             let pcomplemento = document.getElementById('Complemento');
+           
             
            console.log('nome:',nome)
            console.log('email:',email)
            console.log('senha:',senha)
            console.log('senha2:',senha2)
+
+             if (nome === "") {
+              pnome.innerText = " * Campo NOME Vazio, preencha correctamente";
+              pnome.style.color  = "red";
+              
+             } else{
+              pnome.innerText = ""
+             }
+             if(nome.length  > 1 && nome.length < 3){
+              pnome.innerText = " * Nome precisa ser maior que 2 caracteres";
+              pnome.style.color  = "red";
+              
+             }
+             //email
+             if(re.test(email) === false){
+                 pemail.innerText = " * Campo Email Inválido, preencha correctamente";
+                 pemail.style.color  = "red";
+               }
+               if (email == "") {
+                 pemail.innerText = " * Campo Email Vazio, preencha correctamente";
+                 pemail.style.color  = "red";           
+               }
+               //senha
+               if (senha == "") {
+                 psenha.innerText = " * Campo SENHA Vazio, preencha correctamente";
+                 psenha.style.color  = "red";
+                } 
+                else{
+                  psenha.innerText = ""
+                 }
+                
+                if(senha.length <1 || senha.length < 6){
+                 psenha.innerText = " * Senha precisa ser maior ou igual a 6 caracteres";
+                 psenha.style.color  = "red";
+                 
+                }
+                //confirm senha
+                if (senha2 == "") {
+                 psenha2.innerText = " * Campo SENHA Vazio, preencha correctamente";
+                 psenha2.style.color  = "red";
+                } 
+                else{
+                  psenha2.innerText = ""
+                 }
+                if(senha2 !== senha){
+                 psenha2.innerText = " * Senhas NÃO condizem ";
+                 psenha2.style.color  = "red";
+                }
+  
+                //RG
+                if (rg == "") {
+                 pRG.innerText = " * Campo RG Vazio, preencha correctamente";
+                 pRG.style.color  = "red";
+                } 
+                else{
+                  pRG.innerText = ""
+                 }
+                if(rg.length > 1 && rg.length < 7){
+                 pRG.innerText = " * RG inválido ";
+                 pRG.style.color  = "red";
+                 
+                }
+                //cep
+                if (cep == "") {
+                 pcep.innerText = " * Campo CEP Vazio, preencha correctamente";
+                 pcep.style.color  = "red";
+                }  else{
+                  pcep.innerText = ""
+                 }
+                
+                if (estado == "") {
+                 pEstado.innerText = " * Campo ESTADO Vazio, preencha correctamente";
+                 pEstado.style.color  = "red";
+                } 
+                else{
+                  pEstado.innerText = ""
+                 }
+                if (cidade == "") {
+                 pCidade.innerText = " * Campo CIDADE Vazio, preencha correctamente";
+                 pCidade.style.color  = "red";
+                
+                } else{
+                  pCidade.innerText = ""
+                 }
+                
+                if (bairro == "") {
+                 pBairro.innerText = " * Campo BAIRRO Vazio, preencha correctamente";
+                 pBairro.style.color  = "red";
+                }
+                else{
+                  pBairro.innerText = ""
+                 } 
+                if (rua == "") {
+                 pRua.innerText = " * Campo RUA, preencha correctamente";
+                 pRua.style.color  = "red";
+                }
+                else{
+                  pRua.innerText = ""
+                 } 
+                if (complemento == "") {
+                 pcomplemento.innerText = " * Campo COMPLEMENTO Vazio, preencha correctamente";
+                 pcomplemento.style.color  = "red";
+                }else{
+                  pcomplemento.innerText = ""
+                  Swal.fire({
+                    type: 'success',
+                    title: 'Excelente',
+                    text: 'Cadastro realizado com sucesso',
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
+                //swal("Excelente!", "Cadastro realizado com sucesso", "success");
+                let url = "index.html";
+                setTimeout(function(){
+                    location = url;
+                },2000)
+                }
+          
            //nome
-            if (nome === "") {
-             pnome.innerText = " * Campo NOME Vazio, preencha correctamente";
-             pnome.style.color  = "red";
-            
-            } 
-            if(nome.length  > 1 && nome.length < 3){
-             pnome.innerText = " * Nome precisa ser maior que 2 caracteres";
-             pnome.style.color  = "red";
-            }
-            //email
-            if(re.test(email) === false){
-                pemail.innerText = " * Campo Email Inválido, preencha correctamente";
-                pemail.style.color  = "red";
-            
-              }
-              if (email == "") {
-                pemail.innerText = " * Campo Email Vazio, preencha correctamente";
-                pemail.style.color  = "red";
-                           
-              }
-              //senha
-              if (senha == "") {
-                psenha.innerText = " * Campo SENHA Vazio, preencha correctamente";
-                psenha.style.color  = "red";
-               
-               } 
-               if(senha.length <1 || senha.length < 6){
-                psenha.innerText = " * Senha precisa ser maior ou igual a 6 caracteres";
-                psenha.style.color  = "red";
-               }
-               //confirm senha
-               if (senha2 == "") {
-                psenha2.innerText = " * Campo SENHA Vazio, preencha correctamente";
-                psenha2.style.color  = "red";
-               
-               } 
-               if(senha2 !== senha){
-                psenha2.innerText = " * Senhas NÃO condizem ";
-                psenha2.style.color  = "red";
-               }
+           
 
-               //RG
-               if (rg == "") {
-                pRG.innerText = " * Campo RG Vazio, preencha correctamente";
-                pRG.style.color  = "red";
                
-               } 
-               if(rg.length > 1 && rg.length < 7){
-                pRG.innerText = " * RG inválido ";
-                pRG.style.color  = "red";
-               }
-               //cep
-               if (cep == "") {
-                pcep.innerText = " * Campo CEP Vazio, preencha correctamente";
-                pcep.style.color  = "red";
-               
-               } 
-               if (estado == "") {
-                pEstado.innerText = " * Campo ESTADO Vazio, preencha correctamente";
-                pEstado.style.color  = "red";
-               
-               } 
-               if (cidade == "") {
-                pCidade.innerText = " * Campo CIDADE Vazio, preencha correctamente";
-                pCidade.style.color  = "red";
-               
-               } 
-               if (bairro == "") {
-                pBairro.innerText = " * Campo BAIRRO Vazio, preencha correctamente";
-                pBairro.style.color  = "red";
-               
-               }
-               if (rua == "") {
-                pRua.innerText = " * Campo RUA, preencha correctamente";
-                pRua.style.color  = "red";
-               
-               }
-               if (complemento == "") {
-                pcomplemento.innerText = " * Campo COMPLEMENTO Vazio, preencha correctamente";
-                pcomplemento.style.color  = "red";
-               
-               }
-
-               Swal.fire({
-                type: 'success',
-                title: 'Excelente',
-                text: 'Cadastro realizado com sucesso',
-                showConfirmButton: false,
-                timer: 2000
-              })
-            //swal("Excelente!", "Cadastro realizado com sucesso", "success");
-            let url = "index.html";
-            setTimeout(function(){
-                location = url;
-            },2000)
+ 
+           
+           
+           
             event.preventDefault()
           });
           

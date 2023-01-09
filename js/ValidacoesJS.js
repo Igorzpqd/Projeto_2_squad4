@@ -11,14 +11,14 @@ class ValidacoesJS {
         let pcep = document.getElementById('CEP');
       console.log('teste')
 
-        //Nova variável "cep" somente com dígitos.
-        var cep = $("#cadastroCEP").val().replace(/\D/g, '');
+        //Nova letiável "cep" somente com dígitos.
+        let cep = $("#cadastroCEP").val().replace(/\D/g, '');
     
         //Verifica se campo cep possui valor informado.
         if (cep != "") {
     
             //Expressão regular para validar o CEP.
-            var validacep = /^[0-9]{8}$/;
+            let validacep = /^[0-9]{8}$/;
     
             //Valida o formato do CEP.
             if(validacep.test(cep)) {

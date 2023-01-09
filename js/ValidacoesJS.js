@@ -195,7 +195,7 @@ class ValidacoesJS {
                     timer: 2000
                   })
                 //swal("Excelente!", "Cadastro realizado com sucesso", "success");
-                let url = "index.html";
+                let url = "planos.html";
                 setTimeout(function(){
                     location = url;
                 },2000)
@@ -292,7 +292,7 @@ class ValidacoesJS {
             timer: 3000
           })
         //swal("Excelente!", "Cadastro realizado com sucesso", "success");
-        let url = "index.html";
+        let url = "premium.html";
         setTimeout(function(){
             location = url;
         },3000)

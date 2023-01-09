@@ -5,15 +5,14 @@
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
+ 
   <meta name="author" content="Holger Koenemann">
   <meta name="generator" content="Eleventy v2.0.0">
   <meta name="HandheldFriendly" content="true">
   <title>Login</title>
   <link rel="stylesheet" href="css/theme.min.css">
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="js/ValidacoesJS.js"></script>
  
 
 
@@ -42,19 +41,21 @@
 <form class="row">
   <div class="col-12">
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">E-mail </label>
-    <input type="email" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <label for="exampleInputEmail1" class="form-label">E-mail </label><div id="pemail"></div>
+    <input type="email" class="form-control form-control-lg bg-gray-800 border-dark" id="email" >
     <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
   </div>
+
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Senha</label>
-    <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
+    <label for="exampleInputPassword1" class="form-label">Senha</label><div id="psenha"></div>
+    <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="senha">
   </div>
-  <button type="submit" class="btn btn-white btn-xl mb-4">Entrar</button>
+  
+  <button type="submit" class="btn btn-white btn-xl mb-4" id="entrar">Entrar</button>
   <p style="font-size: 15px;">Esqueceu a senha?  <a href="recuperacaoSenha.html"  style="color:pink;text-decoration: none;">Recuperar Senha</a></p>
   <div>
     
-    <p>Não tem cadastro?  <a href="cadastro.html"  style="color:pink;text-decoration: none;">Cadastrar</a></p>
+    <p>Não tem cadastro?  <a href="cadastro.html"  style="color:pink;text-decoration: none;" >Cadastrar</a></p>
   </div>
   
 </div>
@@ -68,4 +69,11 @@
         </div>
 <p></p>
       </div></body>
+      <script>
+        const validar = new ValidacoesJS();
+        validar.login()
+        
+  
+      
+      </script>
     </html>

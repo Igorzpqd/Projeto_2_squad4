@@ -11,6 +11,7 @@
   <meta name="HandheldFriendly" content="true">
   <title>Cadastro</title>
   <link rel="stylesheet" href="css/theme.min.css">
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="js/ValidacoesJS.js"></script>
   
   
@@ -41,7 +42,7 @@
   <div class="col-12">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Nome</label>
-      <input type="email" class="form-control form-control-lg bg-gray-800 border-dark" name="cadastroNome" id="cadastroNome"  >
+      <input type="email" class="form-control form-control-lg bg-gray-800 border-dark"  id="cadastroNome"  >
       <p id="Pnome"></p>
     </div>
   <div class="mb-3">
@@ -52,7 +53,7 @@
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Senha</label>
     <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroSenha">
-    <div id="Senha"></div>
+    <p id="Senha"></p>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Confirmação da Senha</label>
@@ -60,32 +61,33 @@
     <div id="Senha2"></div>
 
     <label for="exampleInputPassword1" class="form-label">RG</label>
-    <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroRG">
+    <input type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroRG">
     <div id="RG"></div>
+    
 
 
-    <label for="exampleInputPassword1" class="form-label">CEP</label>
-    <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroCEP">
+    <label for="exampleInputPassword1" class="form-label">CEP</label>&ensp;&ensp;<button id="buscar" style=" position: relative; right: 50;">Buscar</button>
+    <input type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroCEP">
     <div id="CEP"></div>
 
     <label for="exampleInputPassword1" class="form-label">Estado</label>
-    <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroEstado">
+    <input type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroEstado">
     <div id="Estado"></div>
 
     <label for="exampleInputPassword1" class="form-label">Cidade</label>
-    <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroCidade">
+    <input type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroCidade">
     <div id="Cidade"></div>
 
     <label for="exampleInputPassword1" class="form-label">Bairro</label>
-    <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroBairro">
+    <input type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroBairro">
     <div id="Bairro"></div>
 
     <label for="exampleInputPassword1" class="form-label">Rua/Número</label>
-    <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroRua">
+    <input type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroRua">
     <div id="Número"></div>
 
     <label for="exampleInputPassword1" class="form-label">Complemento</label>
-    <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroComplemento">
+    <input type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="cadastroComplemento">
     <div id="Complemento"></div>
   </div>
  
@@ -106,10 +108,14 @@
       </div>
       
     </body>
+    
     <script>
       const validar = new ValidacoesJS();
       validar.cadastro()
-  
+      validar.buscarRG()
+      
+
+    
     </script>
     
     </html>

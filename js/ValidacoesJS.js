@@ -1,7 +1,4 @@
 class ValidacoesJS {
-  
-
-
     // constructor() {
     //     this.validacoes = [];
     // } 
@@ -84,18 +81,18 @@ class ValidacoesJS {
            console.log('senha:',senha)
            console.log('senha2:',senha2)
 
+           if(nome.length  > 1 && nome.length < 3){
+            pnome.innerText = " * Nome precisa ser maior que 2 caracteres";
+            pnome.style.color  = "red";
+            
+           }
+
              if (nome === "") {
               pnome.innerText = " * Campo NOME Vazio, preencha correctamente";
               pnome.style.color  = "red";
               
-             } else{
-              pnome.innerText = ""
-             }
-             if(nome.length  > 1 && nome.length < 3){
-              pnome.innerText = " * Nome precisa ser maior que 2 caracteres";
-              pnome.style.color  = "red";
-              
-             }
+             } 
+             
              //email
              if(re.test(email) === false){
                  pemail.innerText = " * Campo Email Inválido, preencha correctamente";
@@ -110,9 +107,7 @@ class ValidacoesJS {
                  psenha.innerText = " * Campo SENHA Vazio, preencha correctamente";
                  psenha.style.color  = "red";
                 } 
-                else{
-                  psenha.innerText = ""
-                 }
+                
                 
                 if(senha.length <1 || senha.length < 6){
                  psenha.innerText = " * Senha precisa ser maior ou igual a 6 caracteres";
@@ -124,9 +119,7 @@ class ValidacoesJS {
                  psenha2.innerText = " * Campo SENHA Vazio, preencha correctamente";
                  psenha2.style.color  = "red";
                 } 
-                else{
-                  psenha2.innerText = ""
-                 }
+                
                 if(senha2 !== senha){
                  psenha2.innerText = " * Senhas NÃO condizem ";
                  psenha2.style.color  = "red";
@@ -137,9 +130,7 @@ class ValidacoesJS {
                  pRG.innerText = " * Campo RG Vazio, preencha correctamente";
                  pRG.style.color  = "red";
                 } 
-                else{
-                  pRG.innerText = ""
-                 }
+                
                 if(rg.length > 1 && rg.length < 7){
                  pRG.innerText = " * RG inválido ";
                  pRG.style.color  = "red";
@@ -149,44 +140,33 @@ class ValidacoesJS {
                 if (cep == "") {
                  pcep.innerText = " * Campo CEP Vazio, preencha correctamente";
                  pcep.style.color  = "red";
-                }  else{
-                  pcep.innerText = ""
-                 }
+                }  
                 
                 if (estado == "") {
                  pEstado.innerText = " * Campo ESTADO Vazio, preencha correctamente";
                  pEstado.style.color  = "red";
                 } 
-                else{
-                  pEstado.innerText = ""
-                 }
+                
                 if (cidade == "") {
                  pCidade.innerText = " * Campo CIDADE Vazio, preencha correctamente";
                  pCidade.style.color  = "red";
                 
-                } else{
-                  pCidade.innerText = ""
-                 }
+                } 
                 
                 if (bairro == "") {
                  pBairro.innerText = " * Campo BAIRRO Vazio, preencha correctamente";
                  pBairro.style.color  = "red";
                 }
-                else{
-                  pBairro.innerText = ""
-                 } 
+                
                 if (rua == "") {
                  pRua.innerText = " * Campo RUA, preencha correctamente";
                  pRua.style.color  = "red";
                 }
-                else{
-                  pRua.innerText = ""
-                 } 
+                 
                 if (complemento == "") {
                  pcomplemento.innerText = " * Campo COMPLEMENTO Vazio, preencha correctamente";
                  pcomplemento.style.color  = "red";
                 }else{
-                  pcomplemento.innerText = ""
                   Swal.fire({
                     type: 'success',
                     title: 'Excelente',
@@ -202,11 +182,6 @@ class ValidacoesJS {
                 }
           
            //nome
-           
-
-               
- 
-           
            
            
             event.preventDefault()
@@ -228,23 +203,8 @@ class ValidacoesJS {
           pemail.innerText = " * Campo Email Vazio";
           pemail.style.color  = "red";
         }else{
-          Email.send({
-            Host: "smtp.gmail.com",
-            Username: `${email}`,
-            Password: "Enter your password",
-            To: email,
-            From: "daniella.silqueiroz@gmail.com",
-            Subject: "Sending Email using javascript",
-            Body: "Well that was easy!!",
-            Attachments: [
-              {
-                name: "File_Name_with_Extension",
-                path: "Full Path of the file"
-              }]
-            })
-            .then(function () {
+          
               window.location.href = "mensagemEmail.html";
-            });
           }
           
             event.preventDefault()
